@@ -16,7 +16,7 @@ const Home = ()=>{
     const navigate = useNavigate()
 
     const GetData = ()=>{ 
-    AxiosInstance.get('Clubs/').then((res) =>{
+    AxiosInstance.get('api/Clubs/').then((res) =>{
         setClubs(res.data)
     })}
     useEffect(()=> {
@@ -50,7 +50,7 @@ const Home = ()=>{
     ])
 
     const DeleteClub = (id)=> {
-        AxiosInstance.delete(`Clubs/${id}/`)
+        AxiosInstance.delete(`api/Clubs/${id}/`)
         .then(()=>{
                 setMessage(
                     <MyMessage

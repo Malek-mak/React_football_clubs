@@ -20,13 +20,13 @@ const Create= ()=>{
     const navigate = useNavigate()
 
     const GetData = ()=>{ 
-        AxiosInstance.get('country/').then((res)=>{
+        AxiosInstance.get('api/country/').then((res)=>{
             setCountry(res.data)
         })
-        AxiosInstance.get('league/').then((res)=>{
+        AxiosInstance.get('api/league/').then((res)=>{
             setLeague(res.data)
         })
-        AxiosInstance.get('characteristic/').then((res)=>{
+        AxiosInstance.get('api/characteristic/').then((res)=>{
             setCharacter(res.data)
         })
     }
@@ -63,7 +63,7 @@ const Create= ()=>{
         validationSchema: validationSchema
         
         ,onSubmit: (values)=>{
-            AxiosInstance.post('Clubs/', values)
+            AxiosInstance.post('api/Clubs/', values)
             .then(()=>{
                 setMessage(
                     <MyMessage

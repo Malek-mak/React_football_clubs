@@ -42,16 +42,16 @@ const Edit = ()=>{
     const id = param.id
 
     const GetData = ()=>{ 
-        AxiosInstance.get('country/').then((res)=>{
+        AxiosInstance.get('api/country/').then((res)=>{
             setCountry(res.data)
         })
-        AxiosInstance.get('league/').then((res)=>{
+        AxiosInstance.get('api/league/').then((res)=>{
             setLeague(res.data)
         })
-        AxiosInstance.get('characteristic/').then((res)=>{
+        AxiosInstance.get('api/characteristic/').then((res)=>{
             setCharacter(res.data)
         })
-        AxiosInstance.get(`Clubs/${id}/`).then((res)=>{
+        AxiosInstance.get(`api/Clubs/${id}/`).then((res)=>{
             setclub(res.data)
         })
     }
@@ -92,7 +92,7 @@ const Edit = ()=>{
         enableReinitialize:true,
 
         onSubmit: (values)=>{
-            AxiosInstance.put(`Clubs/${id}/`, values)
+            AxiosInstance.put(`api/Clubs/${id}/`, values)
             .then(()=>{
                 setMessage(
                     <MyMessage
